@@ -2,22 +2,24 @@ module.exports = {
   root: true,
   env: {
     node: true,
-    es2020: true,
+    browser: true,
   },
   extends: [
     'plugin:vue/vue3-essential',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and displays Prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+    'plugin:prettier/recommended',
     '@vue/typescript/recommended',
+    'eslint:recommended',
     'prettier',
   ],
   parserOptions: {
     ecmaVersion: 2020,
   },
   rules: {
-    'prettier/prettier': 'error', // Show Prettier errors as ESLint errors
+    'vue/require-v-for-key': 'error', // Ensures that a `key` attribute is added to elements in `v-for`
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
     'vue/no-mutating-props': 'off',
   },
 };

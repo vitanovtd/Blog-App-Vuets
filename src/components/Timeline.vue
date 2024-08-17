@@ -1,11 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const periods = ['Today', 'This Week', 'This Month'];
+</script>
 
 <template>
+  {{ periods }}
   <nav class="is-primary panel">
     <span class="panel-tabs">
-      <a>Today</a>
-      <a>This Week</a>
-      <a>This Month</a>
+      <a v-for="period of periods">
+        {{ period }}
+      </a>
     </span>
   </nav>
 </template>
